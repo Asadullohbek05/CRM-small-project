@@ -65,36 +65,37 @@ const ProductsTable = ({ products, deleteProduct, editProduct, search, category,
                         )}
                     </tbody>
                 </table>
-                {totalItems <= 8 ? '' :
-                    <div className="flex text-center justify-center absolute bottom-6 w-full">
-                        <div className="join">
+
+                <div className="flex justify-evenly items-center absolute bottom-6 w-full">
+                    <h1 className="text-xl">Number of all products ({products.length})</h1>
+
+                    {totalItems <= 8 ? '' : <div className="join">
+                        <button
+                            className="join-item btn"
+                            disabled={currentPage === 1}
+                            onClick={() => handlePageChange(currentPage - 1)}
+                        >
+                            «
+                        </button>
+                        {Array.from({ length: paginationItems }, (_, i) => (
                             <button
-                                className="join-item btn"
-                                disabled={currentPage === 1}
-                                onClick={() => handlePageChange(currentPage - 1)}
+                                key={i}
+                                className={`join-item btn ${currentPage === i + 1 ? 'active' : ''}`}
+                                onClick={() => handlePageChange(i + 1)}
                             >
-                                «
+                                {i + 1}
                             </button>
-                            {Array.from({ length: paginationItems }, (_, i) => (
-                                <button
-                                    key={i}
-                                    className={`join-item btn ${currentPage === i + 1 ? 'active' : ''}`}
-                                    onClick={() => handlePageChange(i + 1)}
-                                >
-                                    {i + 1}
-                                </button>
-                            ))}
-                            <button
-                                className="join-item btn"
-                                disabled={currentPage === paginationItems}
-                                onClick={() => handlePageChange(currentPage + 1)}
-                            >
-                                »
-                            </button>
-                        </div>
-                    </div>
-                }
-                <h1 className="absolute bottom-9 left-2 text-xl">Number of all products ({products.length})</h1>
+                        ))}
+                        <button
+                            className="join-item btn"
+                            disabled={currentPage === paginationItems}
+                            onClick={() => handlePageChange(currentPage + 1)}
+                        >
+                            »
+                        </button>
+                    </div>}
+                </div>
+
             </div>
         </div>
     );
