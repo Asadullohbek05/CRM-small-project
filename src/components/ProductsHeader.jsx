@@ -1,6 +1,11 @@
 import PropTypes from 'prop-types';
 
 const ProductsHeader = ({ search, setSearch, category, setCategory, sorting, setSorting }) => {
+    const closeModal = () => {
+        const modal = document.getElementById('my_modal_2');
+        modal.close();
+    }
+
     return (
         <div className="md:border-2 rounded-lg">
             <div className="navbar h-auto rounded-lg bg-base-100 flex flex-col md:flex-row">
@@ -42,7 +47,7 @@ const ProductsHeader = ({ search, setSearch, category, setCategory, sorting, set
                 </div>
             </div>
             <dialog id="my_modal_2" className="modal">
-                <div className="modal-box">
+                <div className="modal-box text-center">
                     <h1 className='text-center mb-3'>Filtering by Category </h1>
                     <select
                         className="select select-bordered w-full md:w-auto mb-2 md:mb-0 md:me-3"
@@ -65,10 +70,10 @@ const ProductsHeader = ({ search, setSearch, category, setCategory, sorting, set
                         <option value="Increase">Increase</option>
                         <option value="Decrease">Decrease</option>
                     </select>
+                    <button onClick={closeModal} className='btn mx-auto mt-4'>
+                        Close
+                    </button>
                 </div>
-                <form method="dialog" className="modal-backdrop">
-                    <button>close</button>
-                </form>
             </dialog>
         </div>
     );
