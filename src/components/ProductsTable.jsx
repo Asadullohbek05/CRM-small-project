@@ -36,7 +36,7 @@ const ProductsTable = ({ products, deleteProduct, editProduct, search, category,
 
 
     return (
-        <div className="border-2 flex-1 mt-3 rounded-lg">
+        <div className="border-2 flex-1 mt-3 mx-auto rounded-lg w-[92%] md:w-full">
             <div className="h-[600px] relative overflow-x-auto">
                 <table className="table">
                     <thead>
@@ -66,8 +66,8 @@ const ProductsTable = ({ products, deleteProduct, editProduct, search, category,
                     </tbody>
                 </table>
 
-                <div className="flex justify-evenly items-center absolute bottom-6 w-full">
-                    <h1 className="text-xl">Number of all products ({products.length})</h1>
+                <div className="flex justify-evenly items-center absolute bottom-6 w-full px-1">
+                    <h1 className="text-[13px] sm:text-xl">Number of all products ({products.length})</h1>
 
                     {totalItems <= 8 ? '' : <div className="join">
                         <button

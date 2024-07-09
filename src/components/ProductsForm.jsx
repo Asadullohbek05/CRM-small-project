@@ -6,7 +6,7 @@ const ProductsForm = (
         handleProduct, handleSubmit, selected }
 ) => {
     return (
-        <form onSubmit={handleSubmit} className="border-2 mt-3 w-[400px] p-3 flex flex-col gap-2 rounded-lg" >
+        <form onSubmit={handleSubmit} className="border-2 mt-3 w-[92%] mx-auto p-5 md:w-[400px]  md:px-3 flex flex-col gap-4 md:gap-2 rounded-lg" >
             <h1 className="text-2xl text-center">Product Adding</h1>
             <div className="flex flex-col gap-2">
                 <label htmlFor="name">

@@ -67,7 +67,7 @@ const ProductsPage = () => {
     }
 
     return (
-        <div className="border-1 max-w-7xl h-screen mx-auto pt-2 px-4">
+        <div className="border-1 max-w-7xl  mx-auto pt-2 md:px-4">
             <ProductsHeader
                 search={search}
                 category={category}
@@ -76,7 +76,7 @@ const ProductsPage = () => {
                 setCategory={setCategory}
                 setSorting={setSorting}
             />
-            <div className="flex justify-between gap-3">
+            <div className="items-center md:flex md:justify-between gap-3">
                 <ProductsForm
                     product={product}
                     selected={selected}
